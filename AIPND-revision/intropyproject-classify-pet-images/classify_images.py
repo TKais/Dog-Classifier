@@ -14,7 +14,7 @@
 #             function and results for the functin call within main.
 #            -The CNN model architecture as model within classify_images function
 #             and in_arg.arch for the function call within main. 
-#           This function uses the extend function to add items to the list 
+#           This function uses the function to add items to the list 
 #           that's the 'value' of the results dictionary. You will be adding the
 #           classifier label as the item at index 1 of the list and the comparison 
 #           of the pet and classifier labels as the item at index 2 of the list.
@@ -66,7 +66,15 @@ def classify_images(images_dir, results_dic, model):
            None - results_dic is mutable data type so no return needed.         
     """
     for result in results_dic:
-        print(results_dic[result])
         classification = classifier(images_dir + result, model)
-        print(classification)
+        classification = classification.lower().strip()
+        split_classification = classification.split(',')
+        label = results_dic[result]
+        for index, animal in enumerate(split_classification):
+            if animal.strip() in label:
+                results_dic[result].extend([animal])
+                results_dic[result].append(1)
+            elif index == len(split_classification) - 1:
+                results_dic[result].extend([animal])
+                results_dic[result].append(0)
     None 
