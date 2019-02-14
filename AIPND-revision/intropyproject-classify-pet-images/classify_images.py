@@ -65,16 +65,13 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
-    for result in results_dic:
-        classification = classifier(images_dir + result, model)
-        classification = classification.lower().strip()
-        split_classification = classification.split(',')
-        label = results_dic[result]
-        for index, animal in enumerate(split_classification):
-            if animal.strip() in label:
-                results_dic[result].extend([animal])
-                results_dic[result].append(1)
-            elif index == len(split_classification) - 1:
-                results_dic[result].extend([animal])
-                results_dic[result].append(0)
+    for key in results_dic:
+        classification = classifier(images_dir + key, model)
+        classification = model_label.lower()
+        classification = model_label.strip()
+        label = results_dic[key][0]
+        if label in classification:
+            results_dic[key].extend((classification, 1))
+        else:
+            results_dic[key].extend((classification, 0))
     None 
