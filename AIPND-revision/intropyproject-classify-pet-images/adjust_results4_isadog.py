@@ -37,6 +37,8 @@
 #       results_dic dictionary that is passed into the function is a mutable 
 #       data type so no return is needed.
 # 
+import warnings
+
 def adjust_results4_isadog(results_dic, dogfile):
     """
     Adjusts the results dictionary to determine if classifier correctly 
@@ -66,5 +68,29 @@ def adjust_results4_isadog(results_dic, dogfile):
                maltese) (string - indicates text file's filename)
     Returns:
            None - results_dic is mutable data type so no return needed.
-    """           
+    """
+    dognames_dic = {}
+    with open(dogfile, 'r') as file:
+        line = file.readline()
+        while line != "":
+            line = line.rstrip()
+            if line in dognames_dic:
+                warnings.warn('Dog name already exists in dictionary')
+            else:
+                dognames_dic[line] = 1
+            line = file.readline()
+        for key in results_dic:
+            pet_image_label = results_dic[key][0]
+            classifier_label = results_dic[key][1]
+            if pet_image_label in dognames_dic:
+                if classifier_label in dognames_dic:
+                    results_dic[key].extend((1,1))
+                else:
+                    results_dic[key].extend((1,0))
+            else:
+                if classifier_label in dognames_dic:
+                    results_dic[key].extend((0,1))
+                else:
+                    results_dic[key].extend((0,0))
     None
+    
