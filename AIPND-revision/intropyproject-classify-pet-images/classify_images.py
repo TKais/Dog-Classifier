@@ -67,8 +67,8 @@ def classify_images(images_dir, results_dic, model):
     """
     for key in results_dic:
         classification = classifier(images_dir + key, model)
-        classification = model_label.lower()
-        classification = model_label.strip()
+        classification = classification.lower()
+        classification = classification.strip()
         label = results_dic[key][0]
         if label in classification:
             results_dic[key].extend((classification, 1))
