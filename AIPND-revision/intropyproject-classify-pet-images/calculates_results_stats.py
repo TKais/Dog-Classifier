@@ -69,5 +69,8 @@ def calculates_results_stats(results_dic):
                      on how to calculate the counts and statistics.
     """        
     # Replace None with the results_stats_dic dictionary that you created with 
-    # this function 
+    # this function
+    results_stats_dic = {}
+    results_stats_dic['n_images'] = len(results_dic.keys())
+    print(results_stats_dic)
     return None
