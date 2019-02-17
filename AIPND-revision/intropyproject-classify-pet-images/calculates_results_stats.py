@@ -70,7 +70,6 @@ def calculates_results_stats(results_dic):
     """        
     # Replace None with the results_stats_dic dictionary that you created with 
     # this function
-    print(results_dic)
     results_stats_dic = {}
     results_stats_dic['n_images'] = len(results_dic.keys())
     results_stats_dic['n_dogs_img'] = 0
@@ -106,5 +105,4 @@ def calculates_results_stats(results_dic):
         results_stats_dic['pct_correct_breed'] = (results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img']) * 100
         results_stats_dic['pct_match'] = (results_stats_dic['n_match'] / results_stats_dic['n_images']) * 100
         
-    print(results_stats_dic)
     return results_stats_dic
