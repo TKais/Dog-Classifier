@@ -8,4 +8,11 @@ Q2:  Did each of the three model architectures classify the breed of dog in Dog_
 A2:  Both alexnet and vgg architecture models reported the same breed of doberman, doberman pinscher for Dog_01.jpg and Dog_02.jpg. However, resnet reported that the breed for Dog_01.jpg is doberman, doberman pinscher while the breed for Dog_02.jpg is redbone.
 
 
-Q3:  
+Q3:  Did the three model architectures correctly classify Animal_Name_01.jpg and Object_Name_01.jpg to not be dogs? If not, report the misclassifications.
+
+A3:  Yes, all three model architectures correctly classified Animal_Name_01.jpg and Object_Name_01.jpg to not be dogs.
+
+
+Q4:  Based upon your answers for questions 1. - 3. above, select the model architecture that you feel did the best at classifying the four uploaded images. Describe why you selected that model architecture as the best on uploaded image classification.
+
+A4:  The model architecture that did the best at classifying the four uploaded images was alexnet. This is because it correctly classified both dog and non-dog photos; the label and classifier labels matched, despite being the wrong breed (all three architectures got the breed wrong, but resnet couldn't correctly match both labels and vgg required 2 additional seconds to compute its results), and it only took 1 second to compute these results (resnet only took 1 second as well, but its pet label and classifier label were different).
