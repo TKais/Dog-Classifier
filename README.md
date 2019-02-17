@@ -9,3 +9,15 @@ Each directory has a `requirements.txt` describing the minimal dependencies requ
 ### pip
 
 To install these dependencies with pip, you can issue `pip3 install -r requirements.txt`.
+
+### Project Answers for Uploaded Image Classification
+
+To find answers for Uploaded Image Classification, see answers.txt. These answers pertain to results generated from the uploaded_images folder.
+
+### Project Answers for Final Results
+
+To find answers for Uploaded Image Classification, see results.txt. These answers pertain to results generated from the pet_images folder.
+
+### Runimg the application
+
+To run the application, run python3 check_images.py
