@@ -62,5 +62,8 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """    
-    None
+    print('The CNN model architecture being used is %s' % model)
+    print('The total number of images is %d' % results_stats_dic['n_images'])
+    print('The total number of dog images is %d' % results_stats_dic['n_dogs_img'])
+    print('The total number of non-dog images is %d' % results_stats_dic['n_notdogs_img'])
                 
