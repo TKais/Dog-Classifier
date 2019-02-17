@@ -1,0 +1,6 @@
+Q1:  Did the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed? If not, report the differences in the classifications.
+
+A1:  Yes, they all reported the breed to be a doberman, doberman pinscher.
+
+
+Q2:  
