@@ -32,7 +32,7 @@
 #       prints a summary of the results using results_dic and results_stats_dic
 # 
 def print_results(results_dic, results_stats_dic, model, 
-                  print_incorrect_dogs = False, print_incorrect_breed = False):
+                  print_incorrect_dogs = False, print_incorrect_breed = True):
     """
     Prints summary results on the classification and then prints incorrectly 
     classified dogs and incorrectly classified dog breeds if user indicates 
@@ -74,6 +74,11 @@ def print_results(results_dic, results_stats_dic, model,
     print('The percentage of correct matches: %d' % results_stats_dic['pct_match'])
     
     if print_incorrect_dogs == True and (results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'] != results_stats_dic['n_images']):
-        for index, key in enumerate(results_dic):
+        for key in results_dic:
             if sum(results_dic[key][3:]) == 1:
-                print('Misclassified dog number %d : Pet image label is %s and Classifier label is %s' % index, results_dic[key][0], results_dic[key][1])
+                print('Misclassified dog: Pet image label is %s and Classifier label is %s' % (results_dic[key][0], results_dic[key][1]))
+    
+    if print_incorrect_breed == True and (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']):
+        for key in results_dic:
+            if sum(results_dic[key][3:]) == 2 and results_dic[key][2] == 0:
+                print('Misclassified breed: Pet image label is %s and Classifier label is %s' % (results_dic[key][0], results_dic[key][1]))
