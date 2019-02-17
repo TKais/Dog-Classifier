@@ -82,6 +82,7 @@ def calculates_results_stats(results_dic):
     results_stats_dic['pct_correct_dogs'] = 0
     results_stats_dic['pct_correct_breed'] = 0
     results_stats_dic['pct_correct_notdogs'] = 0
+    results_stats_dic['pct_match'] = 0
     
     for key in results_dic:
         if results_dic[key][3] == 1:
@@ -99,5 +100,7 @@ def calculates_results_stats(results_dic):
         
         results_stats_dic['pct_correct_dogs'] = (results_stats_dic['n_correct_dogs'] / results_stats_dic['n_dogs_img']) * 100
         results_stats_dic['pct_correct_notdogs'] = (results_stats_dic['n_correct_notdogs'] / results_stats_dic['n_notdogs_img']) * 100
+        results_stats_dic['pct_correct_breed'] = (results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img']) * 100
+        results_stats_dic['pct_correct_breed'] = (results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img']) * 100
     print(results_stats_dic)
     return results_stats_dic
