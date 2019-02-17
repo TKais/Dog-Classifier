@@ -1,0 +1,17 @@
+alexnet (pet_images)
+Percent not a dog correct: 100%
+Percent dogs correct: 100%
+Percent breeds correct: 80%
+Percent match labels: 75%
+
+resnet (pet_images)
+Percent not a dog correct: 90%
+Percent dogs correct: 100%
+Percent breeds correct: 90%
+Percent match labels: 82%
+
+vgg (pet_images)
+Percent not a dog correct: 100%
+Percent dogs correct: 100%
+Percent breeds correct: 93%
+Percent match labels: 87%
