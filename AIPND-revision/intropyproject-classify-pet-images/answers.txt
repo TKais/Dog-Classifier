@@ -3,4 +3,9 @@ Q1:  Did the three model architectures classify the breed of dog in Dog_01.jpg t
 A1:  Yes, they all reported the breed to be a doberman, doberman pinscher.
 
 
-Q2:  
+Q2:  Did each of the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed of dog as that model architecture classified Dog_02.jpg? If not, report the differences in the classifications.
+
+A2:  Both alexnet and vgg architecture models reported the same breed of doberman, doberman pinscher for Dog_01.jpg and Dog_02.jpg. However, resnet reported that the breed for Dog_01.jpg is doberman, doberman pinscher while the breed for Dog_02.jpg is redbone.
+
+
+Q3:  
